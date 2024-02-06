@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body{
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+
+            margin: 20px;
+            font-size: 35px;
+            outline: none;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+        }
+        .red{
+            background: red;
+        }
+        .green{
+            background: #81e381;
+        }
+        .gif{
+            width: 80% !important;
+        }
+        p{
+            font-size: 50px;
+            color: pink;
+        }
+
+    </style>
+</head>
+<body>
+<img id="gif" src="love-wedding.gif" class="gif" alt="">
+<p id="demo">အမေ့ချွေးမလုပ်မလား?</p>
+<button onclick="handleYes()" id="yes" class="green">လုပ်မယ်</button>
+<button onclick="handleNo()" id="no" class="red">မလုပ်ဖူး</button>
+
+
+
+
+<script>
+    let yes = document.getElementById('yes');
+    var currentSize = window.getComputedStyle(yes,null).getPropertyValue('font-size');
+    let gif = document.getElementById('gif');
+    function handleYes() {
+        document.getElementById("yes").style.display = 'none';
+        document.getElementById("no").style.display = 'none';
+        document.getElementById("demo").innerHTML = "ယေး လက်ထပ်ကြစို့!!";
+        document.getElementById('gif').attributes.item(1).textContent = "bubu-dudu-kisses.gif"
+    }
+    function  handleNo(){
+        console.log(currentSize)
+        currentSize = parseFloat(currentSize)+25
+        if (document.getElementById("no").innerText === 'မလုပ်ဖူး'){
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "sad-anxious.gif"
+            document.getElementById("no").innerText = 'နောက်တစ်ကြိမ်လောက်စဉ်းစားကြည့်ပါဦး';
+        }
+        else if (document.getElementById("no").innerText === 'နောက်တစ်ကြိမ်လောက်စဉ်းစားကြည့်ပါဦး') {
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "tkthao219-bubududu.gif"
+            document.getElementById("no").innerText = 'ထပ်ပြီးတစ်ကြိမ်ခေါက်ပြန်စဉ်းစားပေးပါဦး';
+        }
+        else if (document.getElementById("no").innerText === 'ထပ်ပြီးတစ်ကြိမ်ခေါက်ပြန်စဉ်းစားပေးပါဦး') {
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "sad-dp.gif"
+            document.getElementById("no").innerText = 'နည်းနည်းလေးတောင် မစဉ်းစားပေးတော့ဖူးလား';
+        }
+        else if (document.getElementById("no").innerText === 'နည်းနည်းလေးတောင် မစဉ်းစားပေးတော့ဖူးလား') {
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "alone-lonely.gif"
+            document.getElementById("no").innerText = 'ပျော်အောင်ထားပေးမှာလေ';
+        }else if (document.getElementById("no").innerText === 'ပျော်အောင်ထားပေးမှာလေ') {
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "love.gif"
+            document.getElementById("no").innerText = 'အများကြီးချစ်ပေးပါ့မယ်';
+        }else if (document.getElementById("no").innerText === 'အများကြီးချစ်ပေးပါ့မယ်') {
+            document.getElementById("yes").style.fontSize = currentSize+'px';
+            document.getElementById('gif').attributes.item(1).textContent = "break-heart.gif"
+            document.getElementById("no").innerText = 'မလုပ်ဖူး';
+        }
+
+    }
+
+</script>
+</body>
+
+</html>
