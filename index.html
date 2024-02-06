@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mary Me</title>
+    <title>Title</title>
     <style>
 
         body{
@@ -11,6 +11,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            overflow: hidden;
         }
         button{
 
@@ -59,7 +60,7 @@
     }
     function  handleNo(){
         console.log(currentSize)
-        currentSize = parseFloat(currentSize)+25
+        currentSize = parseFloat(currentSize)+35
         if (document.getElementById("no").innerText === 'မလုပ်ဖူး'){
             document.getElementById("yes").style.fontSize = currentSize+'px';
             document.getElementById('gif').attributes.item(1).textContent = "sad-anxious.gif"
@@ -85,7 +86,7 @@
             document.getElementById("no").innerText = 'အများကြီးချစ်ပေးပါ့မယ်';
         }else if (document.getElementById("no").innerText === 'အများကြီးချစ်ပေးပါ့မယ်') {
             document.getElementById("yes").style.fontSize = currentSize+'px';
-            document.getElementById('gif').attributes.item(1).textContent = "break-heart.gif"
+            document.getElementById('gif').attributes.item(1).textContent = "love-wedding.gif"
             document.getElementById("no").innerText = 'မလုပ်ဖူး';
         }
 
